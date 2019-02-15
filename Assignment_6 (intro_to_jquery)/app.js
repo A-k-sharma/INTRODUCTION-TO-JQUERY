@@ -34,7 +34,7 @@ var e=function()
 {
 	$(document).ready(function()
 	{
-		$("#main>.target").css("color","DodgerBlue")
+		$("#main>.target").css("font-size","45px")
 	});
 }
 
@@ -149,19 +149,20 @@ e.stopPropagation();
 
 
 
-$(document).ready(function () 
-{
-	var imageArray = ["https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-	"https://ak.picdn.net/assets/cms/14c40a5a7a7f50788cf9e346071ab49ad1201b12-17d705f0349ed08f5387b39c7644054a59affe52-LOHP_vector_module_shutterstock_307324316-min.jpg",
-	"https://i.pinimg.com/originals/5a/e5/8f/5ae58f5036997cfd4636917403c3c951.jpg"]
-	$("#slider").hover(function () 
-	{
-		var image = $("#slide-img");
-		image.animate(500, function () 
-		{
-			var random = imageArray[Math.floor(Math.random() * imageArray.length)];
-			image.attr("src", random);
-			$("#slider").html(image);
-		})
-	})
+$(document).ready(function () {
+
+var imageArray = ["https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+"https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+"https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+"https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"]
+
+$("#slider"). click(function () {
+var image = $("#slide-img");
+image.animate({ opacity: 0 }, 500, function () {
+var random = imageArray[Math.floor(Math.random() * imageArray.length)];
+image.attr("src", random);
+image.css('opacity', 1);
+$("#slider").html(image);
+})
+})
 });
